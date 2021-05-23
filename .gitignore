@@ -1,3 +1,9 @@
+main
+*.aux
+*.log
+*.tex
+*.toc
+
 # Prerequisites
 *.d
 
