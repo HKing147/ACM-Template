@@ -1,6 +1,6 @@
 # 安装方法
 
-[English](./README.md)
+> [English](./README.md)
 
 ```
 git clone https://github.com/HKing147/ACM-Template.git
