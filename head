@@ -8,7 +8,7 @@
 \usepackage{listings,xcolor}
 \usepackage{geometry} % 设置页边距
 %\usepackage[margin=1in]{geometry}
-\usepackage{fontspec, xunicode, xltxtra}
+\usepackage{fontspec}%, xunicode, xltxtra}
 %\usepackage{fontspec}
 \usepackage{graphicx}%插图宏集
 \usepackage{setspace}
@@ -24,8 +24,9 @@
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 % 设置中文字体
-%\setCJKmainfont[Path="fonts/win_cn_fonts",BoldFont={simkai.ttf},ItalicFont=simhei.ttf]{simhei.ttf}
-%\setCJKfamilyfont{kai}[Path="fonts/win_cn_fonts"]{simkai.ttf} 
+\setCJKmainfont[BoldFont={SimSun},ItalicFont={SimSun}]{STZhongsong}
+\setCJKfamilyfont{SimSun}{SimSun}
+\setCJKmonofont{SimSun}
 
 \setsansfont{Consolas} % 设置英文字体
 \setmonofont[Mapping={}]{Consolas} % 英文引号之类的正常显示，相当于设置英文字体
@@ -39,10 +40,10 @@
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \pagestyle{fancy}
-\lhead{\CJKfamily{kai} Nanchang University} %以下分别为左中右的页眉和页脚
+\lhead{\CJKfamily{SimSun} Nanchang University} %以下分别为左中右的页眉和页脚
 \chead{}
 
-\rhead{\CJKfamily{kai} 第 \thepage 页}
+\rhead{\CJKfamily{SimSun} 第 \thepage 页}
 \lfoot{} 
 \cfoot{\thepage}
 \rfoot{}
