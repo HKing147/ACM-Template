@@ -1,6 +1,6 @@
-# Usage:
+# 安装方法
 
-[Chinese]("./README_CN.md")
+[English]("./README.md")
 
 ```
 git clone https://github.com/HKing147/ACM-Template.git
