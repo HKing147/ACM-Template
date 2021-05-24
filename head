@@ -3,6 +3,7 @@
 \usepackage{titletoc}%要调整章节标题在目录页中的格式，可以用titletoc宏包 title of contents
 \usepackage{titlesec} %其中 center 可使标题居中,还可设为 raggedleft (居左，默认),
 \usepackage{abstract}%摘要分栏的宏包
+\usepackage[OT1]{fontenc}  %添加后才使字体加粗和斜体起作用
 \usepackage{xeCJK}%中文字体
 \usepackage{amsmath, amsthm}
 \usepackage{listings,xcolor}
@@ -23,15 +24,20 @@
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
-
 % 设置中文字体
-\setCJKmainfont[BoldFont={SimSun},SlantedFont={SimSun},ItalicFont={SimSun}]{SimSun}
-\setCJKfamilyfont{SimSun}{SimSun}
-\setCJKmonofont{SimSun}
+\setCJKmainfont[BoldFont={华文楷体},SlantedFont={方正硬笔楷书_GBK},ItalicFont={方正硬笔行书简体}]{华文楷体}
+\setCJKfamilyfont{华文楷体}{华文楷体}
+%\setCJKfamilyfont{方正行楷_GBK}{方正行楷_GBK}
+\setCJKmonofont{华文楷体}
+%\setCJKmainfont[BoldFont={方正行楷_GBK},SlantedFont={方正行楷_GBK},ItalicFont={方正行楷_GBK}]{方正行楷_GBK}
 
-\setsansfont{Sauce Code Pro Semibold Nerd Font Complete Mono} % 设置英文字体
-\setmonofont[Mapping={}]{Sauce Code Pro Semibold Nerd Font Complete Mono} % 英文引号之类的正常显示，相当于设置英文字体
-
+% 设置英文字体
+\setsansfont{Consolas}
+%\setsansfont{Sauce Code Pro Semibold Nerd Font Complete Mono}
+\setmonofont[Mapping={}]{Consolas} % 英文引号之类的正常显示，相当于设置英文字体
+%\setmonofont[Mapping={}]{Sauce Code Pro Semibold Nerd Font Complete Mono} % 英文引号之类的正常显示，相当于设置英文字体
+\setmainfont{Consolas}
+%\setmainfont{Sauce Code Pro Semibold Nerd Font Complete Mono}
 \linespread{1.2}
 
 \title{Template For ICPC}
@@ -41,10 +47,10 @@
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \pagestyle{fancy}
-\lhead{\CJKfamily{SimSun} Nanchang University} %以下分别为左中右的页眉和页脚
+\lhead{\CJKfamily{华文楷体} Nanchang University} %以下分别为左中右的页眉和页脚
 \chead{}
 
-\rhead{\CJKfamily{SimSun} 第 \thepage 页}
+\rhead{\CJKfamily{华文楷体} 第 \thepage 页}
 \lfoot{} 
 \cfoot{\thepage}
 \rfoot{}
@@ -65,25 +71,33 @@
     numberstyle={                               % 设置行号格式
         \small
         \color{black}
-        \fontspec{Sauce Code Pro Semibold Nerd Font Complete Mono}
+        \fontspec{Consolas}
+        %\fontspec{Sauce Code Pro Semibold Nerd Font Complete Mono}
     },
 	commentstyle ={                             %代码注释格式
         \color[RGB]{0,128,0}
-        \fontspec{Sauce Code Pro Semibold Italic Nerd Font Complete}
+        %\fontspec{Sauce Code Pro Semibold Italic Nerd Font Complete}
+        %\fontspec{华文楷体}
+        \fontspec{Consolas}
         \bfseries
+        %\itshape
+        %\emph
     },
 	keywordstyle={                              % 设置关键字格式
         \color[RGB]{40,40,255}
-        \fontspec{Sauce Code Pro Semibold Nerd Font Complete Mono}
+        \fontspec{Consolas}
+        %\fontspec{Sauce Code Pro Semibold Nerd Font Complete Mono}
         \bfseries
     },
     stringstyle={                               % 设置字符串格式
         \color[RGB]{128,0,0}
-        \fontspec{Sauce Code Pro Semibold Nerd Font Complete Mono}
+        \fontspec{Consolas}
+        %\fontspec{Sauce Code Pro Semibold Nerd Font Complete Mono}
         \bfseries
     },
 	basicstyle={                                % 设置代码格式
-        \fontspec{Sauce Code Pro Semibold Nerd Font Complete Mono}
+        \fontspec{Consolas}
+        %\fontspec{Sauce Code Pro Semibold Nerd Font Complete Mono}
         \small\ttfamily
     },
 	emphstyle=\color[RGB]{112,64,160},          % 设置强调字格式
