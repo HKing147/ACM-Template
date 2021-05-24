@@ -6,7 +6,7 @@ template.pdf: template.tex main
 template.tex: main
 
 main: main.cpp
-	cc main.cpp -o main
+	g++ main.cpp -o main
 
 clean:
-	rm template.* main
+	rm -rf template.* main
