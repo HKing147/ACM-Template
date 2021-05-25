@@ -53,8 +53,6 @@
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
-\renewcommand{\contentsname}{\center 目录} 
-
 \pagestyle{fancy}
 %以下分别为左中右的页眉和页脚
 \CJKfamily{华文楷体}{
@@ -67,6 +65,7 @@
 }
 \renewcommand{\headrulewidth}{0.4pt} 
 \renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\contentsname}{\huge \center 目录} %目录标题
 \geometry{left=2.5cm,right=3cm,top=2.5cm,bottom=2.5cm} % 页边距
 \geometry{left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
 \setlength{\columnsep}{30pt}
