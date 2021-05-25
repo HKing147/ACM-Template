@@ -4,7 +4,7 @@
 
 ## 安装
 
-### 前提:安装好 xelatex 以及所需的字体
+### 前提:安装好 xelatex
 
 ### 克隆仓库
 
@@ -20,6 +20,13 @@ cp * /usr/share/fonts/
 mkfontscale
 mkfontdir
 fc-cache
+```
+
+### 生成 pdf 模板文件
+
+```
+cd ..
+make
 ```
 
 ## 使用
