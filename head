@@ -131,7 +131,7 @@
     \vskip 5cm
     \begin{minipage}{1\textwidth}
 		\begin{center} \LARGE
-			\emph{Author:}\@author \\
+			\emph{Author: \@author} \\
             \emph{Email: 1470042308@qq.com} \\
 		\end{center}
 	\end{minipage}
