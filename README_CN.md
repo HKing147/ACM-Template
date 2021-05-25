@@ -16,7 +16,7 @@ git clone https://github.com/HKing147/ACM-Template.git
 
 ```
 cd ACM-template/fonts/
-cp * /usr/share/fonts/
+cp ./* /usr/share/fonts/
 mkfontscale
 mkfontdir
 fc-cache
