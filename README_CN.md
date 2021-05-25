@@ -14,6 +14,8 @@
 >
 > ### 安装字体
 >
+> #### 主要字体:Latin Modern Mono 和华文楷体,代码字体为 Consolas,代码注释字体为 Latin Modern Mono
+>
 > ```shell
 > cd ACM-template/.fonts/
 > cp ./* /usr/share/fonts/
