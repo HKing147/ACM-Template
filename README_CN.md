@@ -4,7 +4,7 @@
 
 ## 安装
 
-### 前提:安装好 xelatex
+### 前提:安装好 xelatex 以及所需的字体
 
 ```
 git clone https://github.com/HKing147/ACM-Template.git
