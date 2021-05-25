@@ -1,7 +1,7 @@
 %\documentclass[a4paper,twocolumn]{article} %两列
 \documentclass[10pt,a4paper]{article}
 \usepackage{titletoc}%要调整章节标题在目录页中的格式，可以用titletoc宏包 title of contents
-\usepackage{titlesec} %其中 center 可使标题居中,还可设为 raggedleft (居左，默认),
+\usepackage[center]{titlesec} %其中 center 可使标题居中,还可设为 raggedleft (居左，默认),
 \usepackage{abstract}%摘要分栏的宏包
 %\usepackage[OT1]{fontenc}  %添加后才使字体加粗和斜体起作用
 \usepackage{xeCJK}%中文字体
@@ -14,7 +14,8 @@
 \usepackage{graphicx}%插图宏集
 \usepackage{setspace}
 \usepackage{fancyhdr} % 自定义页眉页脚
-\usepackage[bookmarks=true,colorlinks,linkcolor=black]{hyperref} %生成书签
+%\usepackage[bookmarks=true,colorlinks,linkcolor=black]{hyperref} %生成书签
+\usepackage[breaklinks,colorlinks,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
 
 \usepackage[Glenn]{fncychap}
 \usepackage{color}
@@ -50,13 +51,15 @@
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \pagestyle{fancy}
-\lhead{\CJKfamily{华文楷体} Nanchang University} %以下分别为左中右的页眉和页脚
-\chead{}
-
-\rhead{\CJKfamily{华文楷体} 第 \thepage 页}
-\lfoot{} 
-\cfoot{\thepage}
-\rfoot{}
+%以下分别为左中右的页眉和页脚
+\CJKfamily{华文楷体}{
+    \lhead{Nanchang University} 
+    \chead{}
+    \rhead{第 \thepage 页}
+    \lfoot{HKing} 
+    \cfoot{\thepage}
+    \rfoot{}
+}
 \renewcommand{\headrulewidth}{0.4pt} 
 \renewcommand{\footrulewidth}{0.4pt}
 \geometry{left=2.5cm,right=3cm,top=2.5cm,bottom=2.5cm} % 页边距
@@ -74,25 +77,25 @@
     numberstyle={                               % 设置行号格式
         \small
         \color{black}
-        \fontspec{Consolas}
+        %\fontspec{Consolas}
     },
 	commentstyle ={                             %代码注释格式
         \color[RGB]{0,128,0}
+        \fontspec{Latin Modern Mono}
         \bfseries
-        \it
     },
 	keywordstyle={                              % 设置关键字格式
         \color[RGB]{40,40,255}
-        \fontspec{Consolas}
+        %\fontspec{Consolas}
         \bfseries
     },
     stringstyle={                               % 设置字符串格式
         \color[RGB]{128,0,0}
-        \fontspec{Consolas}
+        %\fontspec{Consolas}
         \bfseries
     },
 	basicstyle={                                % 设置代码格式
-        \fontspec{Consolas}
+        %\fontspec{Consolas}
         \small\ttfamily
     },
 	emphstyle=\color[RGB]{112,64,160},          % 设置强调字格式
@@ -110,11 +113,27 @@
 
 \begin{document}
 \begin{titlepage}
-\title{ICPC Templates For HKing}
-\author{HKing147}
-\maketitle
+	\newcommand{\HRule}{\rule{\linewidth}{0.1mm}}
+	\center 
+	\quad\\[1.5cm]
+	%\textsl{\Large University of Chinese Academy of Sciences }\\[0.5cm] 
+	%\textsl{\large School of Electrical and Electronic Engineering}\\[0.5cm] 
+	\makeatletter
+	\HRule \\[0.4cm]
+	{\fontspec{Latin Modern Mono} \fontsize{40pt}{\baselineskip}\selectfont \bfseries \@title}\\[0.2cm] 
+	\HRule \\[5cm]
+    \includegraphics[width=10cm]{logo.jpeg}\\[1cm] 
+    \vskip 5cm
+    \begin{minipage}{1\textwidth}
+		\begin{center} \LARGE
+			\emph{Author:}\@author \\
+            \emph{Email: 1470042308@qq.com} \\
+		\end{center}
+	\end{minipage}
+	\makeatother
+	\vfill 
 \thispagestyle{empty}
 \pagebreak
 \pagestyle{plain}
-\tableofcontents
+{\fontspec{Latin Modern Mono} \tableofcontents}
 \end{titlepage}

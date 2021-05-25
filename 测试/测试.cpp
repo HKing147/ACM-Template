@@ -1,24 +1,25 @@
 /*************************************************************************
- > File Name: test.cpp
+ > File Name: 测试.cpp
  > Author: HKing
  > Mail: 1470042308@qq.com
- > Created Time: 2021年05月23日 星期日 20时13分14秒
+ > Created Time: 2021年05月25日 星期二 09时06分03秒
+ 全品牌字体库一键获取
 *************************************************************************/
 
+#include <iostream>
 #include <algorithm>
 #include <cmath>
-#include <cstring>
-#include <iostream>
-#include <map>
-#include <queue>
-#include <set>
-#include <stack>
 #include <string>
+#include <map>
+#include <cstring>
 #include <vector>
+#include <queue>
+#include <stack>
+#include <set>
 #define IOS ios::sync_with_stdio(0), cin.tie(0), cout.tie(0)
 #define endl '\n'
-#define out(n) cout << n << ' '
-#define outl(n) cout << n << endl
+#define out(n) cout<<n<<' '
+#define outl(n) cout<<n<<endl
 #define sd(n) scanf("%d", &n)
 #define sdd(n, m) scanf("%d%d", &n, &m)
 #define sddd(n, m, k) scanf("%d%d%d", &n, &m, &k)
@@ -39,39 +40,23 @@
 #define x first
 #define y second
 #define pi acos(-1)
-#define de(c, n)                                                               \
-  for (int i = 0; i < n; ++i)                                                  \
-    cout << c;                                                                 \
-  cout << endl
+#define de(c, n)                \
+	for (int i = 0; i < n; ++i) \
+		cout << c;              \
+	cout << endl
 #define debug(a) cout << #a << '=' << a << endl
 #define INF_INT 0x3f3f3f3f;
 #define INF_LONG 4557430888798830399
 #define mem(ar, num) memset(ar, num, sizeof(ar))
 #define me(ar) memset(ar, 0, sizeof(ar))
-#define all(v) v.begin(), v.end()
-#define max(a, b, c) max(a, max(b, c))
+#define all(v) v.begin(),v.end()
+#define max(a,b,c) max(a,max(b,c))
 #define lowbit(x) (x & (-x))
 #define gcd(a, b) __gcd(a, b)
 #define lcm(a, b) a / gcd(a, b) * b
-#define qpow(a, k, p)                                                          \
-  ({                                                                           \
-    LL s = 1;                                                                  \
-    while (k > 0) {                                                            \
-      if (k & 1)                                                               \
-        s = s * a % p;                                                         \
-      a = a * a % p;                                                           \
-      k >>= 1;                                                                 \
-    }                                                                          \
-    s;                                                                         \
-  })
-#define inv(a, p)                                                              \
-  ({                                                                           \
-    LL q = p - 2;                                                              \
-    qpow(a, q, p);                                                             \
-  })
-#define W(t)                                                                   \
-  cin >> t;                                                                    \
-  while (t--)
+#define qpow(a, k, p) ({LL s = 1; while(k > 0) {if (k & 1)s = s * a % p; a = a * a % p; k >>= 1;} s; })
+#define inv(a,p) ({ LL q=p-2;qpow(a,q,p);})
+#define W(t) cin >> t; while(t--)
 using namespace std;
 typedef long long LL;
 typedef unsigned long long ULL;
@@ -80,8 +65,10 @@ typedef pair<int, PII> PIII;
 typedef pair<LL, LL> PLL;
 typedef pair<LL, PLL> PLLL;
 
-int main() {
-  IOS;
+int main()
+{
+	IOS;
 
-  return 0;
+	return 0;
 }
+
