@@ -1,12 +1,10 @@
-template.pdf: template.tex main clean
-	./main
+template.pdf: template.tex clean
+	python3 main.py
 	xelatex template.tex
 	xelatex template.tex
 
-template.tex: main
-
-main: main.cpp
-	g++ main.cpp -o main
+template.tex: main.py
+	python3 main.py
 
 clean:
 	rm -rf template.*
