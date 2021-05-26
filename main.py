@@ -1,12 +1,14 @@
 import os
 
-ignorefile = ['.fonts', '.git']
+#ignorefile = ['.fonts', '.git']
 PATH = "."
-subsections = ["", "section", "subsection", "subsubsection"]
-content = ["", "lstinputlisting", "input"]
-outTexfile = "template.tex"
+subsections = ["", "section", "subsection", "subsubsection"] # 层次列表
+content = ["", "lstinputlisting",
+           "input"] # lstinputlisting 输入.cpp文件,input 输入.tex文件
+outTexfile = "template.tex" # 要生成的.tex文件
 
 
+# 解析参数字符串==>参数列表
 def Parse(paras):
     n = len(paras)
     res = []
@@ -20,10 +22,10 @@ def Parse(paras):
                 i += 1
             i += 1
             res.append(filename)
-    #print(res)
     return res
 
 
+# 将生成的latex排版代码写入到tex文件中
 def writeTotex(path, curfile, parass, deep):
     if (deep == 1):
         with open(outTexfile, 'a') as f:
@@ -33,10 +35,8 @@ def writeTotex(path, curfile, parass, deep):
     while (parass[n - 1] == ''):
         parass.pop()
         n -= 1
-        #print(parass)
     for each in parass:
         paras = Parse(each)
-        #print(paras)
         n = len(paras)
         with open(outTexfile, 'a') as f:
             f.write('\\' + subsections[deep + 1] + '{' + paras[0] + '}\n')
@@ -51,6 +51,7 @@ def writeTotex(path, curfile, parass, deep):
                                 paras[i] + '}\n')
 
 
+# 除去空格和回车符
 def Replace(lst):
     n = len(lst)
     for i in range(0, n):
@@ -58,18 +59,20 @@ def Replace(lst):
     return lst
 
 
+# 读取config配置文件
 def readConfig(path):
     with open(path + '/config', 'r') as f:
         return Replace(f.readlines())
 
 
+# 将head文件内容写入到要生成的tex文件中
 def HeadtoTex():
     with open(outTexfile, 'w') as tex:
         with open("head", 'r') as head:
             tex.write(head.read())
 
 
-if __name__ == "__main__":
+def main():
     HeadtoTex()
     mainConfig = readConfig(PATH)
     for each in mainConfig:
@@ -79,3 +82,7 @@ if __name__ == "__main__":
         writeTotex(path, docname, parass, 1)
     with open(outTexfile, 'a') as f:
         f.write('\\end{document}')
+
+
+if __name__ == "__main__":
+    main()
