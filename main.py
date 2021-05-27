@@ -3,8 +3,9 @@ import os
 #ignorefile = ['.fonts', '.git']
 PATH = "."
 subsections = ["", "section", "subsection", "subsubsection"] # 层次列表
-content = ["", "lstinputlisting",
-           "input"] # lstinputlisting 输入.cpp文件,input 输入.tex文件
+#content = ["", "lstinputlisting", "input"] # lstinputlisting 输入.cpp文件,input 输入.tex文件
+content = {"cpp": "lstinputlisting", "tex": "input", "md": "input"}
+
 outTexfile = "template.tex" # 要生成的.tex文件
 
 
@@ -47,7 +48,13 @@ def writeTotex(path, curfile, parass, deep):
             for i in range(1, n):
                 if (paras[i] != ''):
                     with open(outTexfile, 'a') as f:
-                        f.write('\\' + content[i] + '{' + path + '/' +
+                        s = paras[i].split('.')[-1]
+                        if (s == 'md'):
+                            os.popen("pandoc " + path + '/' + paras[i] +
+                                     " -o " + path + '/' +
+                                     paras[i].replace('md', 'tex'))
+                            paras[i] = paras[i].replace('md', 'tex')
+                        f.write('\\' + content[s] + '{' + path + '/' +
                                 paras[i] + '}\n')
 
 
